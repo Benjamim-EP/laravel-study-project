@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,4 +30,8 @@ Route::get('/produtos', function(){
 
 Route::get('todosprodutos',function(){
     return redirect()->route('meusprodutos');
+});
+
+Route::post('/requisicoes', function(Request $request){
+    return 'Hello';
 });
