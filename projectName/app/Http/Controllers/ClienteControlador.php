@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 
 class ClienteControlador extends Controller
 {
+
+    private $clientes = [
+        ['id' => 1, 'nome' => 'admir'],
+        ['id' => 2, 'nome' => 'joao'],
+        ['id' => 3, 'nome' => 'marcola'],
+        ['id' => 4, 'nome' => 'pedro']
+        
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,8 @@ class ClienteControlador extends Controller
      */
     public function index()
     {
-        //
+       $clientes = $this->clientes;
+       return view('clientes.index',compact(['clientes']));
     }
 
     /**

@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('produtos','MeuControlador@produtos');
-//Route::resource('clientes','ClienteControlador');
+//Route::get('produtos','MeuControlador@produtos');
+Route::resource('clientes','ClienteControlador');
