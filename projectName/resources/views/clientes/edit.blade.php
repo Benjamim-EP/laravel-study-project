@@ -1,3 +1,6 @@
+@extends('layouts.principal')
+
+@section('conteudo')
 <h3>Novo Cliente</h3>
 
 <form action="{{route('clientes.update', $cliente['id']) }}" method="POST">
@@ -7,3 +10,5 @@
     <input type="submit" name="Salvar">
     
 </form>
+
+@endsection
