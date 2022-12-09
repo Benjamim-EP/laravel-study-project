@@ -1,5 +1,7 @@
 @extends('layouts.principal')
 
+@section('titulo','Clientes')
+
 @section('conteudo')
 
 <h3>{{$texto}}</h3>
@@ -20,6 +22,7 @@
         </li> 
     @endforeach
 </ul>
+<hr>
 @endif
 
 @endsection
