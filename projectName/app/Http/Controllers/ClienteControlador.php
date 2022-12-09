@@ -30,9 +30,12 @@ class ClienteControlador extends Controller
     {
        $clientes = session('clientes');
        $texto = "Todos os clientes";
-       return view('clientes.index') // with = passa uma variavel para a view
-            ->with('clientes',$clientes)
-            ->with('titulo',$texto);
+       return view('clientes.index', 
+            ['clientes'=>$clientes,'texto'=>$texto]);
+        /*
+            mesmo que
+            return view('clientes.index, compact(['clientes,'titulo']));
+        */
     }
 
     /**

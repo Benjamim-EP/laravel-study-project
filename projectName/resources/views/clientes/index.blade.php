@@ -1,4 +1,4 @@
-<h3>{{$titulo}}</h3>
+<h3>{{$texto}}</h3>
 <a href="{{ route ('clientes.create')}}">Novo cliente</a>
 <ol>
     @foreach ($clientes as $c)
