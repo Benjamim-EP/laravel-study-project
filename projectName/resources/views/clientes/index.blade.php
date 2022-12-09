@@ -1,6 +1,8 @@
 <h3>{{$texto}}</h3>
 <a href="{{ route ('clientes.create')}}">Novo cliente</a>
-<ol>
+
+@if(count($clientes)>0)
+<ul>
     @foreach ($clientes as $c)
         <li>
             {{$c['nome']}} |
@@ -11,6 +13,7 @@
                 @method('DELETE')
                 <input type="submit" value="Apagar">
             </form>
-        </li>
+        </li> 
     @endforeach
-</ol>
+</ul>
+@endif
