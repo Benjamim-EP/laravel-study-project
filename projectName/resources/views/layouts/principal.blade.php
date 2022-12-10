@@ -19,6 +19,9 @@
                         href="{{route('produtos') }}">Produtos</a></li>
                     <li><a class="{{request()->routeIs('departamentos')? 'active':''}}" 
                         href="{{route('departamentos')}}">Departamentos</a></li>
+                    <li><a class="{{request()->routeIs('opcoes')? 'active':''}}" 
+                        href="{{route('opcoes')}}">Opcoes</a></li>
+                    
                 </ul>
             </div>
         </div>
