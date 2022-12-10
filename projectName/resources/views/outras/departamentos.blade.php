@@ -11,7 +11,11 @@
     <li>Roupas</li>
 </ul>
 
-@component('components.alerta')
-@endcomponent
+@alerta(['titulo'=>'Erro Fatal','tipo'=>'error'])
+<p><strong>Erro inesperado</strong></p>
+@endalerta
+@alerta(['titulo'=>'Erro Fatal','tipo'=>'success'])
+<p><strong>Erro inesperado</strong></p>
+@endalerta
 
 @endsection
