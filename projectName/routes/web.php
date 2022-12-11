@@ -28,3 +28,7 @@ Route::resource('clientes','ClienteControlador');
 Route::get('opcoes/{opcao?}',function($opcao=null){
     return view('outras.opcoes',compact(['opcao']));
 })->name('opcoes');
+
+ Route::get('bootstrap', function(){
+    return view('outras.exemplo');
+ });
