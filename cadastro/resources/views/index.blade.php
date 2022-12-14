@@ -9,16 +9,16 @@
                 <div class="card-body">
                     <h5 class="card-title"></h5>
                     <p class="card=text">
-                        Aqui vc cadastra todos os seus produtos
+                        Categorias
                     </p>
-                    <a href="/produtos" class="btn btn-primary">Cadastre</a>
+                    <a href="/categorias" class="btn btn-primary">Cadastre</a>
                 </div>
             </div>
             <div class="card border border-primary">
                 <div class="card-body">
                     <h5 class="card-title"></h5>
                     <p class="card=text">
-                        Aqui vc cadastra todos os seus produtos
+                        produtos
                     </p>
                     <a href="/produtos" class="btn btn-primary">Cadastre</a>
                 </div>
