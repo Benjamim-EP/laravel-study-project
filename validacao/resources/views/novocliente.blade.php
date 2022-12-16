@@ -30,10 +30,13 @@
               </div>
 
               <div class="form-group">
-                <label for="endereco">Email</label>
-<!--
+                <label for="endereco">Endereço</label>
+                <input type="text" class="form-control" name="endereco"  id="endereco" placeholder="endereco">
+               </div>  
+            <div class="form-group">
+ <!--            
                 <input type="email" class="form-control" name="email"  id="email" placeholder="E-mail do Cliente">
--->
+-->             <label for="email">Email</label>
                 <input type="text" class="form-control" name="email"  id="email" placeholder="E-mail do Cliente">
               </div>
 
