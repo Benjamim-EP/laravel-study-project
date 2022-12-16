@@ -30,13 +30,10 @@
               </div>
 
               <div class="form-group">
-                <label for="endereco">Endereço</label>
-                <input type="text" class="form-control" name="endereco"  id="endereco" placeholder="endereco">
-               </div>  
-            <div class="form-group">
- <!--            
+                <label for="endereco">Email</label>
+<!--
                 <input type="email" class="form-control" name="email"  id="email" placeholder="E-mail do Cliente">
--->             <label for="email">Email</label>
+-->
                 <input type="text" class="form-control" name="email"  id="email" placeholder="E-mail do Cliente">
               </div>
 
@@ -44,12 +41,31 @@
               <button type="reset" class="btn btn-danger btn-sm">Cancelar</button>
             </form>
           </div>
+          
+{{-- 3) --}}
+@if ($errors->any())          
+          <div class="card-footer">
+    @foreach ($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+          {{ $error }}
+        </div>
+    @endforeach
+          </div>
+@endif          
 
         </div>
 
       </div>
     </div>
   </main>
+  
+  {{-- 3) --}}
+  {{ 
+    var_dump($errors) 
+  }} 
+
+
+
   <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 
 </body>
