@@ -14,7 +14,10 @@ class ControladorCategoria extends Controller
      */
     public function index()
     {
-        return view('categorias');
+        $cats = Categoria::all();
+        return view('categorias',compact('cats'));
+        $cats.save();
+        return redirect('/categorias');
     }
 
     /**
