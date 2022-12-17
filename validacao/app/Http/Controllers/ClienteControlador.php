@@ -34,15 +34,24 @@ class ClienteControlador extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|min:3|max:20|unique:clientes',
-            'idade' => 'required|integer',
-            'endereco' => 'required',
+
+        $regras = [
+            'nome'  => 'required|min:3|unique:clientes|max:20',
+            'idade' => 'required|min:18',
             'email' => 'required|email'
-        ]);
+        ];
+        $mensagens = [ 
+//            'nome.required' => 'O nome é requerido.',
+            'nome.min' => 'É necessário no mínimo 3 caracteres no nome.',
+            'required' => 'O atributo :attribute não pode estar em branco.',  // Generico
+            'email.required' => 'Digite um endereço de email.',
+            'email.email' => 'Digite um endereço de email válido'
+        ];
+        $request->validate($regras, $mensagens);
+        
 
         $cliente = new Cliente();
         $cliente->nome = $request->input('nome');
