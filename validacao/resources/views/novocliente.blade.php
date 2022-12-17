@@ -22,19 +22,37 @@
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="form-group">
                 <label for="nome">Nome do Cliente</label>
-                <input type="text" class="form-control" name="nome"  id="nome" placeholder="Nome do Cliente">
+                <input type="text" 
+                       class="form-control {{ $errors->has('nome') ? 'is-invalid' : '' }}" 
+                       name="nome"  id="nome" placeholder="Nome do Cliente" value="{{ old('nome') }}">
+@if ($errors->has('nome'))
+                <div class="invalid-feedback">
+{{ $errors->first('nome') }}
+                </div>
+@endif
               </div>
               <div class="form-group">
                 <label for="idade">Idade do Cliente</label>
-                <input type="number" class="form-control" name="idade"  id="idade" placeholder="Idade do Cliente">
+                <input type="number" 
+                       class="form-control {{ $errors->has('idade') ? 'is-invalid' : '' }}" 
+                       name="idade"  id="idade" placeholder="Idade do Cliente" value="{{ old('idade') }}">
+@if ($errors->has('idade'))
+                <div class="invalid-feedback">
+{{ $errors->first('idade') }}
+                </div>
+@endif
               </div>
 
               <div class="form-group">
                 <label for="endereco">Email</label>
-<!--
-                <input type="email" class="form-control" name="email"  id="email" placeholder="E-mail do Cliente">
--->
-                <input type="text" class="form-control" name="email"  id="email" placeholder="E-mail do Cliente">
+                <input type="text"  
+                       class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" 
+                       name="email"  id="email" placeholder="E-mail do Cliente" value="{{ old('email') }}">
+@if ($errors->has('email'))
+                <div class="invalid-feedback">
+{{ $errors->first('email') }}
+                </div>
+@endif
               </div>
 
               <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
@@ -42,16 +60,6 @@
             </form>
           </div>
           
-{{-- 3) --}}
-@if ($errors->any())          
-          <div class="card-footer">
-    @foreach ($errors->all() as $error)
-        <div class="alert alert-danger" role="alert">
-          {{ $error }}
-        </div>
-    @endforeach
-          </div>
-@endif          
 
         </div>
 
@@ -59,13 +67,6 @@
     </div>
   </main>
   
-  {{-- 3) --}}
-  {{ 
-    var_dump($errors) 
-  }} 
-
-
-
   <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 
 </body>
