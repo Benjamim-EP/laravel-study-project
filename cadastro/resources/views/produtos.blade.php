@@ -144,7 +144,7 @@
                 console.log('Apagou OK');
                 linhas = $("#tabelaProdutos>tbody>tr");
                 e = linhas.filter( function(i, elemento) { 
-                    return elemento.cells[0].textContent == id; 
+                    return elemento.cells[0].textContent == id;  // celula que contem o id
                 });
                 if (e)
                     e.remove();
