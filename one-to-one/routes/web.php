@@ -35,6 +35,8 @@ Route::get('/enderecos', function(){
     $ends = Endereco::all();
     foreach($ends as $e){
         echo "<p>ID Cliente: " . $e->cliente_id . "</p>";
+        echo "<p>Nome: " . $e->cliente->nome . "</p>";
+        echo "<p>Telefone: " . $e->cliente->telefone . "</p>";
         echo "<p>Rua: " . $e->rua . "</p>";
         echo "<p>Bairro: " . $e->bairro . "</p>";
         echo "<p>Cidade: " . $e->cidade . "</p>";
