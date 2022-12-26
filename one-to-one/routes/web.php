@@ -74,3 +74,8 @@ Route::get('/inserir', function () {
 
     return "OK";
 });
+
+Route::get('/clientes/json', function () {
+    $clientes = Cliente::with(['endereco'])->get();
+    return  $clientes->toJson();
+});
