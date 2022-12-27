@@ -99,3 +99,23 @@ Route::get('/desassociarproduto/{id}', function ($id) {
     }
     return "Produto nao encontrado";
 });
+
+Route::get('/adicionarproduto/{cat}', function ($catid) {
+    $cat = Categoria::with('produtos')->find($catid);
+    $prod = new Produto();
+
+    $prod->nome = "Novo produto adicionado";
+    $prod->estoque = 30;
+    $prod->preco = 100; 
+
+    if(isset($cat)) {
+        $cat->produtos()->save($prod); 
+    }
+    $cat->load('produtos'); //Atualizando produtos
+    return $cat->toJson();;
+});
+
+Route::get('/produtosjson', function () {
+    $prods = Produto::with('categoria')->get();
+    return $prods;
+});
