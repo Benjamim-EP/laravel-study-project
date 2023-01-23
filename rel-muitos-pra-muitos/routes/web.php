@@ -1,16 +1,20 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Desenvolvedor;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/desenvolvedor_projetos', function () {
+    $desenvolvedores = Desenvolvedor::with('projetos')->get();
+
+    foreach($desenvolvedores as $desenvolvedor) {
+        echo "<p>Nome: {$desenvolvedor->nome}</p>";
+        echo "<p>Projetos: </p>";
+        echo "<ul>";
+        foreach($desenvolvedor->projetos as $projeto) {
+            echo "<li>Nome: {$projeto->nome}</li>";
+        }
+        echo "</ul>";
+        echo "<hr>";
+    }
+
+    //return $desenvolvedores->toJson();
 });
