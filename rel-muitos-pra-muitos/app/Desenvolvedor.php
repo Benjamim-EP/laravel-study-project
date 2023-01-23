@@ -9,6 +9,6 @@ class Desenvolvedor extends Model
     protected $table = 'desenvolvedores';
 
     function projetos() {
-        return $this->belongsToMany('App\Projeto',"alocacaos");
+        return $this->belongsToMany('App\Projeto',"alocacaos")->withPivot('horas_semanais');
     }
 }

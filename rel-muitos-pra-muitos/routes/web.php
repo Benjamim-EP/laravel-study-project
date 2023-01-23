@@ -11,6 +11,7 @@ Route::get('/desenvolvedor_projetos', function () {
         echo "<ul>";
         foreach($desenvolvedor->projetos as $projeto) {
             echo "<li>Nome: {$projeto->nome}</li>";
+            echo "<li>Horas Semanais: {$projeto->pivot->horas_semanais}</li>";
         }
         echo "</ul>";
         echo "<hr>";
