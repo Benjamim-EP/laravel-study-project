@@ -51,3 +51,10 @@ Route::get('/alocar',function(){
         ]);
     }
 });
+
+Route::get('/desalocar',function(){
+    $projeto = Projeto::find(4);
+    if(isset($projeto)) {
+        $projeto->desenvolvedores()->detach([1,2]);
+    }
+});
