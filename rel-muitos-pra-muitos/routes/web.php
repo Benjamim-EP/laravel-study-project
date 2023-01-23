@@ -38,3 +38,16 @@ Route::get('projeto_desenvolvedores',function() {
 
     return $projetos->toJson();
 });
+
+Route::get('/alocar',function(){
+    $projeto = Projeto::find(4);
+    if(isset($projeto)) {
+        //$projeto->desenvolvedores()->attach(1,['horas_semanais'=>40]);
+        //$projeto->desenvolvedores()->attach([1,2,3],['horas_semanais'=>40]);
+        $projeto->desenvolvedores()->attach([
+            1 => ['horas_semanais'=>40],
+            2 => ['horas_semanais'=>20],
+            3 => ['horas_semanais'=>10]
+        ]);
+    }
+});
