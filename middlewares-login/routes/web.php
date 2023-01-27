@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Route::get('/produtos','ProdutoControlador@index');
 
+Route::get('/negado', function(){
+    return 'Acesso negado';
+})->name('negado');
+
 Route::post('/login', function (Request $req) {
     $login_ok = false;
     switch($req->input('user')){
@@ -33,9 +37,17 @@ Route::post('/login', function (Request $req) {
             break;
     }
     if($login_ok){
+        $login = ['user'=>$req->input('user')];
+        $req->session()->put('login',$login);
         return response('Login OK', 200);
     }
     else{
+        $req->session()->flush();
         return response('Falha no login', 404);
     }
+});
+
+Route::get('/logout', function (Request $req) {
+    $req->session()->flush();
+    return response('Logout OK', 200);
 });

@@ -12,6 +12,10 @@ class ProdutoControlador extends Controller
         'Mouse',
         'Teclado'
     ];
+
+    public function __construct(){
+        $this->middleware(\App\Http\Middleware\ProdutoAdmin::class);
+    }
     
     public function index(){
         $html = '<h1>Produtos</h1>';
