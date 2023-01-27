@@ -15,7 +15,7 @@ class ProdutoAdmin
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('login')){
+        if($request->session()->exists('login')){
             $login = $request->session()->get('login');
             if($login['user'] != 'joao'){
                 return redirect('/negado');
