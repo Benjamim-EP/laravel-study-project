@@ -24,3 +24,7 @@ Route::get('/produtos', 'ProdutoControlador@index')
 
 Route::get('/departamentos', 'DepartamentoControlador@index')
     ->name('departamentos');
+
+Route::get('/usuario',function () {
+    return view('usuario');
+});
