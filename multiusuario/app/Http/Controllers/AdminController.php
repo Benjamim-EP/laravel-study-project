@@ -8,10 +8,12 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admin'); // usando o guard admin
+        // Primeiro usar esse
+        // $this->middleware('auth');
+        // Depois esse:
+        $this->middleware('auth:admin');
     }
-
-    public function index()
+    public function index() 
     {
         return view('admin');
     }

@@ -5,16 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard - Admin</div>
+                <div class="card-header">Dashboard - Administrador </div>
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
+                        <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    Voce está logado como Admin!
+                    <h3>Você está logado como ADMINISTRADOR</h3>
                 </div>
             </div>
         </div>
