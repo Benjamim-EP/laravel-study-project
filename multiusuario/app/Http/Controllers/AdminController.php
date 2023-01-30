@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function _construct()
+    public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('admin');
+        $this->middleware('auth:admin'); // usando o guard admin
     }
 
     public function index()
